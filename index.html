@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>Terrorism Map</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+</head>
+
+<body>
+  <div id="map-container" class="container-fluid">
+    <div id='count' class='ui-control'></div>
+    <div id="map">
+      <div id="switches">
+				<ul class="switches-container dropdown-container map-control">
+					<li class="dropdown">
+						<a href="#"><i class="fa fa-users"></i></a>
+						<ul id="group" class="dropdown-list">
+              <li><a class='gname' href="javascript:void(0)" id="Boko Haram">Boko Haram</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Al-Shabaab">Al-Shabaab</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Huthis">Huthis</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Al-Qa`ida in the Arabian Peninsula (AQAP)">AQAP</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Al-Qa`ida in Iraq">AQI</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Islamic State of Iraq and the Levant (ISIL)">ISIL</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Janjaweed">Janjaweed</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Hamas">Hamas</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Taliban">Taliban</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="Revolutionary Armed Forces of Colombia (FARC)">FARC</a></li>
+              <li><a class='gname' href="javascript:void(0)" id="National Liberation Army of Colombia (ELN)">ELN</a></li>
+            </ul>
+					</li>
+					<li class="dropdown">
+						<a href="#"><i class="fa fa-globe"></i></a>
+						<ul id="country" class="dropdown-list">
+              <li><a class='country_tx' href="javascript:void(0)" id="India">India</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Pakistan">Pakistan</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Afghanistan">Afghanistan</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Philippines">Philippines</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Indonesia">Indonesia</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Iran">Iran</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Iraq">Iraq</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Syria">Syria</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="China">China</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="Egypt">Egypt</a></li>
+              <li><a class='country_tx' href="javascript:void(0)" id="United States">United States</a></li>
+            </ul>
+					</li>
+					<li class="dropdown">
+						<a href="#"><i class="fa fa-bomb"></i></a>
+						<ul id="attack" class="dropdown-list">
+              <li><a class='attackty_1' href="javascript:void(0)" id="Unarmed Assault">Unarmed Assault</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Armed Assault">Armed Assault</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Bombing/Explosion">Bombing/Explosion</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Assassination">Assassination</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Hostage Taking (Kidnapping)">Hostage Taking (Kidnapping)</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Hostage Taking (Barricade Incident)">Hostage Taking (Barricade Incident)</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Facility/Infrastructure Attack">Facility/Infrastructure Attack</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Hijacking">Hijacking</a></li>
+              <li><a class='attackty_1' href="javascript:void(0)" id="Unknown">Unknown</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+    </div>
+  </div>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
