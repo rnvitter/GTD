@@ -14,7 +14,7 @@ $('.scrollbar-macosx').scrollbar();
 //basemap
 var CartoDB_Midnight = L.tileLayer('https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>, Data: <a href="https://www.start.umd.edu/gtd/">START GTD</a>'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>, Data: <a href="https://www.start.umd.edu/gtd/">START GTD</a>'
 }).addTo(map);
 
 //MarkerClusterGroup that collects all GeoJSON objects
@@ -136,7 +136,7 @@ $(document).delegate('#attack a', 'click', function(e) {
 });
 
 function QueryRun() {
-var querystem = "http://ryanvitter.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM gtd_11to14_all WHERE ";
+var querystem = "https://ryanvitter.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM gtd_11to14_all WHERE ";
 var query = querystem + column + " ILIKE '" + search + "'";
 console.log("Initial query: " + query);
 
