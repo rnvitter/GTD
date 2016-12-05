@@ -1,3 +1,4 @@
+$(document).ready(function() {
 // create map
 var map = L.map('map', {
   center: [15.78219,11.2044942],
@@ -8,10 +9,12 @@ var map = L.map('map', {
 
 L.control.zoom({position:'bottomright'}).addTo(map);
 
+$('.scrollbar-macosx').scrollbar();
+
 //basemap
 var CartoDB_Midnight = L.tileLayer('https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>, Data: <a href="https://www.start.umd.edu/gtd/">START GTD</a>'
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>, Data: <a href="https://www.start.umd.edu/gtd/">START GTD</a>'
 }).addTo(map);
 
 //MarkerClusterGroup that collects all GeoJSON objects
@@ -19,7 +22,7 @@ var group = new L.markerClusterGroup({ disableClusteringAtZoom: 9, maxClusterRad
 
 //styles
 var point_sty = {
-  radius: 5,
+  radius: 7,
   fillColor: "#7B00B4",
   color: "#000",
   weight: 0,
@@ -33,6 +36,13 @@ function highlightFeature(e) {
   	if (!L.Browser.ie && !L.Browser.opera) {
   		layer.bringToFront();
   	}
+
+    layer.setStyle({
+        weight: 2,
+        color: 'white',
+        fillOpacity: 0.7
+    });
+
 }
 
 function clickFeature(e) {
@@ -45,7 +55,9 @@ function clickFeature(e) {
 }
 
 function resetHighlight(e) {
-  	//info.update();
+  var layer = e.target;
+
+  layer.setStyle(point_sty);
 }
 
 function onEachFeature(feature, layer) {
@@ -99,10 +111,6 @@ info.update = function (props) {
     + '</label><br /><strong>SUMMARY: </strong><label>' + ' ');
 };
 
-function getColor(){
-
-}
-
 var column = null;
 var search = null;
 
@@ -128,7 +136,7 @@ $(document).delegate('#attack a', 'click', function(e) {
 });
 
 function QueryRun() {
-var querystem = "https://ryanvitter.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM gtd_11to14_all WHERE ";
+var querystem = "http://ryanvitter.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM gtd_11to14_all WHERE ";
 var query = querystem + column + " ILIKE '" + search + "'";
 console.log("Initial query: " + query);
 
@@ -145,3 +153,5 @@ var bounds = group.getBounds();
       map.fitBounds(bounds);
 });
 }
+
+})
