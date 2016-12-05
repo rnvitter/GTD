@@ -13,7 +13,7 @@ $('.scrollbar-macosx').scrollbar();
 
 //basemap
 var CartoDB_Midnight = L.tileLayer('https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png', {
-  maxZoom: 19,
+  maxZoom: 14,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>, Data: <a href="https://www.start.umd.edu/gtd/">START GTD</a>'
 }).addTo(map);
 
@@ -25,7 +25,7 @@ var point_sty = {
   radius: 7,
   fillColor: "#7B00B4",
   color: "#000",
-  weight: 0,
+  weight: 0.5,
   opacity: 1,
   fillOpacity: 0.7
 };
